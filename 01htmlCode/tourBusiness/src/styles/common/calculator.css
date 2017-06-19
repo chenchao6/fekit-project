@@ -1,0 +1,4 @@
+.valuecomb .valuecomb_disable,.btn-disable,.disabled{background:#eee;color:#fff;cursor:not-allowed;border:1px solid #eee;}
+.btn-select{width:2rem;height:2rem;border:1px solid #eaeaea;font-size:1.2rem;color:#666;background-color:#fff;cursor:pointer}
+.input-number{color:#000;width:90px;border-top:1px solid #eaeaea;border-bottom:1px solid #eaeaea;border-left:0;border-right:0;-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;font-size: .86667rem;}
+.btn-select,.input-number{display:inline-block;line-height:2rem;height:2rem;text-align:center;padding:0;border:1px solid #eaeaea;}

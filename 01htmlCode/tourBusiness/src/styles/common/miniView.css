@@ -1,0 +1,53 @@
+.miniview{
+    background: #f2f2f2;
+    width: 100%;
+    overflow-y: scroll;
+    min-height: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    display: none;
+}
+
+.page{background: #fff;}
+
+/*城市联动*/
+.miniview header {
+}
+.miniview .loading{position: static;}
+.miniview .md-hd-wrapper .col-left {
+    position: absolute;
+    width: 190px;
+    height: 120px
+}
+.miniview .main-wrapper {
+    display: block;
+    /*margin: 30px auto 100px;*/
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+    position: relative;
+    font-family: "HiraginoSansGB-W3 ", "Microsoft YaHei"
+}
+
+.miniview .md-hd-wrapper .col-middle {
+    margin: 0 120px;
+    height: 120px;
+    text-align: center;
+    position: relative;
+    overflow: hidden
+}
+
+.miniview .md-hd-wrapper .col-middle h1 {
+    font-size: 1rem;
+    line-height: 120px;
+    color: #0093d5;
+    font-weight: normal
+}
+.miniview .area-list li {
+    padding:1rem;
+    border-bottom: 1px solid #eee;
+    background-color: #FFF;
+    font-size: 1.2rem;
+}
+/*end 城市联动*/

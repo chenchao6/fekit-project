@@ -1,0 +1,57 @@
+@charset "utf-8";
+@import url("common/layout.css");
+.page-content{
+	width: 24rem;
+}
+.page-content .title{
+	line-height: 3rem;
+	background-color: #ffffff;
+	font-size: 1rem;
+	border-left-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-bottom-color: #f5f4f6;
+	border-bottom-width: 1px;
+	text-align: center;
+}
+.form-apply {
+	padding-left: .5rem;
+}
+.form-apply label{
+   display: inline-block;
+	width: 20%;
+}
+.form-apply .form-item{
+	border-bottom: 1px solid #E1E2E1;
+	position: relative;
+}
+.require{
+	color: red;
+	padding-right: 0.3rem;
+}
+.form-area {
+	border: none;
+	color: #333333;
+	height: 3rem;
+	line-height: 1rem;
+	margin: 5px 0;
+	padding: 5px;
+	width: 64%;
+}
+.i_mui_number{
+	width: 60%;
+}
+.form-number .i_mui_number_cut{
+	background: url(/images/book/smart-cut-icon.png) no-repeat;
+	background-size: cover;
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+}
+.form-number .i_mui_number_add{
+	background: url(/images/book/smart-add-icon.png) no-repeat;
+	background-size: cover;
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+}

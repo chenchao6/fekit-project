@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>招募令</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="/prd/styles/activity.css?1496767878865">
+    <script type="text/javascript">
+    (function() {
+        var h = window,
+            m = document;
+        var c = m.documentElement,
+            a = h.navigator.userAgent,
+            k = c.querySelector('meta[name="viewport"]'),
+            n = 0,
+            d = 0,
+            o = 100,
+            f = {},
+            e;
+        if (!n && !d) {
+            var j = a.match(/android/gi),
+                i = a.match(/iphone/gi),
+                l = h.devicePixelRatio;
+            if (i) {
+                if (l >= 3 && (!n || n >= 3)) {
+                    n = 3;
+                } else {
+                    if (l >= 2 && (!n || n >= 2)) {
+                        n = 2;
+                    } else {
+                        n = 1;
+                    }
+                }
+            } else {
+                n = 1;
+            }
+            d = 1 / n;
+        }
+        c.setAttribute("data-dpr", n);
+        if (k) {
+            var g = k.getAttribute("content").match(/initial\-scale=([\d\.]+)/);
+            if (g) {
+                d = parseFloat(g[1]);
+                n = parseInt(1 / d);
+            }
+        }
+        if (!k) {
+            k = m.createElement("meta");
+            k.setAttribute("name", "viewport");
+            k.setAttribute("content", "initial-scale=" + d + ", maximum-scale=" + d + ", minimum-scale=" + d + ", user-scalable=no");
+            if (c.firstElementChild) {
+                c.firstElementChild.appendChild(k);
+            } else {
+                var b = m.createElement("div");
+                b.appendChild(k);
+                m.write(b.innerHTML);
+            }
+        }
+        refreshRem = function() {
+            var p = c.clientWidth;
+            if (!p) {
+                return;
+            }
+            f.fontSize = 30 * (p / 750);
+            var z = f.fontSize;
+            z = z >= 60 ? 60 : z;
+            c.style.fontSize = z + "px";
+        };
+        h.addEventListener("resize", function() {
+            clearTimeout(e);
+            e = setTimeout(refreshRem, 300);
+        }, false);
+        h.addEventListener("pageshow", function(p) {
+            if (p.persisted) {
+                clearTimeout(e);
+                e = setTimeout(refreshRem, 300);
+            }
+        }, false);
+        refreshRem();
+    })();
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="section-top">
+            <div class="top-img"></div>
+        </div>
+        <div class="section-form">
+            <form id="userInfo" class="form-group">
+                <div class="input-group">
+                    <label for="name"><span class="red">*</span>姓名:</label>
+                    <input require-msg="请填写姓名" pattern="content" isRequire="true" type="text" error-msg="请填写正确的姓名"  id="name" name="name" class="input-item"  >
+                </div>
+                <div class="input-group">
+                    <label for="age">年龄:</label>
+                    <input type="text" pattern="int"  error-msg="请填写正确年龄" id="age" name="age" class="input-item"  >
+                </div>
+                <div class="input-group">
+                    <label for="school"><span class="red">*</span>学校:</label>
+                    <input require-msg="请填写学校" pattern="content" isRequire="true"  type="text" error-msg="请填写正确的学校" id="school" name="school" class="input-item"  >
+                </div>
+                <div class="input-group">
+                    <label for="tel"><span class="red">*</span>电话:</label>
+                    <input require-msg="请填写电话" isRequire="true"  type="text" pattern="int"  error-msg="请填写正确的手机号码" id="tel" name="tel" class="input-item"  >
+                </div>
+                <div class="input-group">
+                    <label><span class="red">*</span>路线:</label>
+                    <select name="tour">
+                        <option value="海龙屯+茅台线路">海龙屯+茅台线路</option>
+                        <option value="云门屯线路产品">云门屯线路产品</option>
+                        <option value="双河洞+地下裂缝产品">双河洞+地下裂缝产品</option>
+                        <option value="清溪峡漂流产品">清溪峡漂流产品</option>
+                    </select>
+                </div>
+                 <div class="input-group">
+                    <label for="memo">备注:</label>
+                    <input type="text" pattern="content"  id="memo" error-msg="请填写正确的备注信息" name="memo" class="input-item"  >
+                </div>
+	        </form>
+            <div class="submit-buttom animate-bounce-down">
+                <span class="btn btn-submit">我要加入游玩</span>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/prd/scripts/common/lib/index.js?1496767878865"></script>
+    <script type="text/javascript" src="/prd/scripts/mobile/activity.js?1496767878865"></script>
+</body>
+
+</html>

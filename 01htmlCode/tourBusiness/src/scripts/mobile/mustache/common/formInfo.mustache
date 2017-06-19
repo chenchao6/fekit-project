@@ -1,0 +1,24 @@
+<div class="cover-section">
+	<header class="relative">
+		<i class="icon i-coupon-default"></i>
+		<span class="txt-gray3">领票人信息</span>
+        <span class="i-close i-close-right J-close"></span>
+	</header>
+	<form id="userInfo" class="form-group">
+	    <div class="input-group">
+            <label for="contact">联系人电话:</label>
+            <input placeholder="联系人电话" type="text" pattern="^\d{11}$" error-msg="请填写正确联系人电话"  id="contact" name="contact" class="input-item"  >
+        </div>
+        <div class="input-group">
+            <label for="cardId">身份证号码:</label>
+            <input placeholder="身份证号码" type="text" pattern="^\d{18}$"  error-msg="请填写正确身份证号码" id="cardId" name="cardId" class="input-item"  >
+        </div>
+        <div class="input-group">
+            <label for="phone">手机号码:</label>
+            <input placeholder="手机号码" type="text" pattern="^\d{11}$"  error-msg="请填写正确手机号码" id="phone" name="phone" class="input-item"  >
+        </div>
+	</form>
+    <div class="cover-error hide">
+    </div>
+	<button class="sub-btn">提交订单</button>
+</div>

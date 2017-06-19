@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>云谷新能源专车</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="/prd/styles/app.css?1496767878865">
+    <script type="text/javascript">
+        (function(){var h=window,m=document;var c=m.documentElement,a=h.navigator.userAgent,k=c.querySelector('meta[name="viewport"]'),n=0,d=0,o=100,f={},e;if(!n&&!d){var j=a.match(/android/gi),i=a.match(/iphone/gi),l=h.devicePixelRatio;
+            if(i){if(l>=3&&(!n||n>=3)){n=3;}else{if(l>=2&&(!n||n>=2)){n=2;}else{n=1;}}}else{n=1;}d=1/n;}c.setAttribute("data-dpr",n);if(k){var g=k.getAttribute("content").match(/initial\-scale=([\d\.]+)/);
+            if(g){d=parseFloat(g[1]);n=parseInt(1/d);}}if(!k){k=m.createElement("meta");k.setAttribute("name","viewport");k.setAttribute("content","initial-scale="+d+", maximum-scale="+d+", minimum-scale="+d+", user-scalable=no");
+            if(c.firstElementChild){c.firstElementChild.appendChild(k);}else{var b=m.createElement("div");b.appendChild(k);m.write(b.innerHTML);}}refreshRem=function(){var p=c.clientWidth;
+            if(!p){return;}f.fontSize=30*(p/750);var z=f.fontSize;z=z>=60?60:z;c.style.fontSize=z+"px";};h.addEventListener("resize",function(){clearTimeout(e);e=setTimeout(refreshRem,300);
+        },false);h.addEventListener("pageshow",function(p){if(p.persisted){clearTimeout(e);e=setTimeout(refreshRem,300);}},false);refreshRem();})();
+    </script>
+</head>
+<body>
+<div class="page-content">
+    <div class="title">
+        云谷专车
+    </div>
+    <div class="smart_order_reserve">
+            <form style="display:block" role="form" class="form-apply">
+                <div class="form-item">
+                    <label><span class="require">*</span>姓名</label>
+                    <input type="text"  class="form-area" placeholder="请输入姓名">
+                </div>
+                <div class="form-item">
+                    <label><span class="require">*</span>手机</label>
+                    <input type="text" class="form-area" placeholder="请输入手机号码">
+                </div>
+                <div class="form-item">
+                    <label><span class="require">*</span>预订日期</label>
+                    <input size="16" type="text" readonly class="form_datetime">
+                </div>
+
+
+                <div class="form-item">
+                    <label><span class="require">*</span>预订天数</label>
+                    <div class="form-number">
+                        <div class="i_mui_number blue">
+                            <div class="i_mui_number_cut i_mui_button"></div>
+                            <input  attr-label="人数" type="number"
+                                   class="form-area " min="1" max="100" value="1">
+                            <div class="i_mui_number_add i_mui_button">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="btn btn-main btn-search J-book">约车</div>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/js/datetime/DateTimePicker.min.js"></script>
+<script type="text/javascript" src="/prd/scripts/mobile/app.js?1496767878865"></script>
+<script>
+
+    //弹出层的用法 showTip();
+    $(function () {
+        $(".J-book").click(function () {
+            //showTip('你好');
+        })
+    })
+
+
+</script>
+</body>
+</html>
