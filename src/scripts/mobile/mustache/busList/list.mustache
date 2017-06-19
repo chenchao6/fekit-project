@@ -1,0 +1,32 @@
+
+{{#list}}
+  <div class="main-info">
+                <img src="/images/u21.png" alt="小牛巴士">
+                <div class="desc">
+                    <p class="title">{{schedule_name}}</p>
+                    <div class="line">
+                        <span>{{departure}}- {{arrive}}</span><span>&nbsp;预计{{expectTimes}}分钟</span>
+                    </div>
+                    <p class="detail txt-gray">{{route}}</p>
+                </div>
+  </div>
+  <div class="main-list">
+                <ul>
+                
+                   <li>
+                   <a href="./busDetail.html?dId={{drive_id}}">
+                        <div class="lineItem timer">{{departure_time}}</div>
+                        <div class="lineItem">商务单程票</div>
+                        <div class="lineItem txt-coral">&yen;{{sale_price}}</div>
+                   </a>
+                       
+                        <div class="calculate clear">
+                            <span class="del fl">-</span>
+                            <input data-id="{{schedule_id}}" data-time="{{departure_time}}" data-price="{{sale_price}}"  class="type-input fl" type="text" value="0" readonly>
+                            <span class="add fl">+</span>
+                        </div>
+                    </li>
+                  
+                </ul>
+  </div>
+{{/list}}

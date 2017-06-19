@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>小牛巴士路线</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="/prd/styles/busDetail.css?1496767878865">
+    <script type="text/javascript">
+    (function() {
+        var h = window,
+            m = document;
+        var c = m.documentElement,
+            a = h.navigator.userAgent,
+            k = c.querySelector('meta[name="viewport"]'),
+            n = 0,
+            d = 0,
+            o = 100,
+            f = {},
+            e;
+        if (!n && !d) {
+            var j = a.match(/android/gi),
+                i = a.match(/iphone/gi),
+                l = h.devicePixelRatio;
+            if (i) {
+                if (l >= 3 && (!n || n >= 3)) {
+                    n = 3;
+                } else {
+                    if (l >= 2 && (!n || n >= 2)) {
+                        n = 2;
+                    } else {
+                        n = 1;
+                    }
+                }
+            } else {
+                n = 1;
+            }
+            d = 1 / n;
+        }
+        c.setAttribute("data-dpr", n);
+        if (k) {
+            var g = k.getAttribute("content").match(/initial\-scale=([\d\.]+)/);
+            if (g) {
+                d = parseFloat(g[1]);
+                n = parseInt(1 / d);
+            }
+        }
+        if (!k) {
+            k = m.createElement("meta");
+            k.setAttribute("name", "viewport");
+            k.setAttribute("content", "initial-scale=" + d + ", maximum-scale=" + d + ", minimum-scale=" + d + ", user-scalable=no");
+            if (c.firstElementChild) {
+                c.firstElementChild.appendChild(k);
+            } else {
+                var b = m.createElement("div");
+                b.appendChild(k);
+                m.write(b.innerHTML);
+            }
+        }
+        refreshRem = function() {
+            var p = c.clientWidth;
+            if (!p) {
+                return;
+            }
+            f.fontSize = 30 * (p / 750);
+            var z = f.fontSize;
+            z = z >= 60 ? 60 : z;
+            c.style.fontSize = z + "px";
+        };
+        h.addEventListener("resize", function() {
+            clearTimeout(e);
+            e = setTimeout(refreshRem, 300);
+        }, false);
+        h.addEventListener("pageshow", function(p) {
+            if (p.persisted) {
+                clearTimeout(e);
+                e = setTimeout(refreshRem, 300);
+            }
+        }, false);
+        refreshRem();
+    })();
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top fixed">
+            <div class="left goback"><i class="i-back icon" onclick="javascript:window.history.go(-1)"></i></div>
+            <span class="title">遵义-机场</span>
+        </div>
+        <div class="main top-fixed">
+            <div class="main-info">
+                <img src="/images/u21.png" alt="小牛巴士">
+                <div class="desc">
+                    <p class="title">小牛巴士1线</p>
+                    <div class="line">
+                        <span>遵义游客集散中心 - 遵义机场</span><span>预计20分钟</span>
+                    </div>
+                    <p class="detail txt-gray">途径：遵义游客集散中心 - 遵义机场</p>
+                </div>
+            </div>
+            <div class="main-desc">
+                <h2 class="title">车票信息</h2>
+                <div class="lineItem">
+                    <span class="timer">2:30</span>
+                    <span class="">商务单程票</span>
+                    <span class="txt-coral">&yen;20</span>
+                    <div class="calculate clear">
+                        <span class="del fl">-</span>
+                        <input data-id="1" data-time="2:30" data-price="20" class="type-input fl" type="text" value="0" readonly>
+                        <span class="add fl">+</span>
+                    </div>
+                    <div class="total">
+                        <span>总计:</span>
+                        <span class="total-price">0</span>
+                        <span>元</span>
+                    </div>
+                </div>
+            </div>
+            <div class="main-desc">
+                <h2 class="title">车票介绍</h2>
+                <p>小牛巴士致力于为广大游客出行提供便捷、安全、舒适的网络约车服务。</p>
+            </div>
+            <div class="main-desc">
+                <h2 class="title">预定须知</h2>
+                <p>需提前2小时购票，购票后请提前10分钟在您预订的登车点等待验票：</p>
+                <p>1、集散中心登车点</p>
+                <p>2、长沙路口登车点</p>
+                <p>3、遵义机场登车点</p>
+            </div>
+            <div class="main-desc">
+                <h2 class="title">退改须知</h2>
+                <p>1、退票规则</p>
+            </div>
+            <div style="height: 5rem"></div>
+        </div>
+        <div class="footer">
+            <a class="btn btn-main btn-book" href="javascript:void(0);">
+           确定预定</a>
+        </div>
+    </div>
+    <script type="text/javascript" src="/prd/scripts/common/lib/index.js?1496767878865"></script>
+    <script type="text/javascript" src="/prd/scripts/mobile/busDetail.js?1496767878865"></script>
+</body>
+
+</html>

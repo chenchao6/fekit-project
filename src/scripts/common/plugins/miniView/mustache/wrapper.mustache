@@ -1,0 +1,25 @@
+<div class="top">
+    <div class="left goback"><i class="i-back icon"></i></div>
+    <span class="title">{{title}}</span>
+
+        {{#action}}
+        <div class="right {{className}}">
+            <i class="i-rubbish icon"></i>
+        </div>
+        {{/action}}
+
+</div>
+ <div class="main-wrapper">
+ 	{{#needLoading}}
+ 	<div class="loading">
+        <img src="http://source.midea.com/SwanEShopMobile/loading.gif">
+        <img src="http://source.midea.com/SwanEShopMobile/loading.gif">
+    </div>
+    {{/needLoading}}
+    <div class="swap-page-wrapper" attr-tag="content">
+        
+    </div>
+</div>
+{{#footer}}
+{{&footer}}
+{{/footer}}

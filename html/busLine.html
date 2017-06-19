@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>小牛巴士活动页</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="/prd/styles/busLine.css?1496767878865">
+    <script type="text/javascript">
+    (function() {
+        var h = window,
+            m = document;
+        var c = m.documentElement,
+            a = h.navigator.userAgent,
+            k = c.querySelector('meta[name="viewport"]'),
+            n = 0,
+            d = 0,
+            o = 100,
+            f = {},
+            e;
+        if (!n && !d) {
+            var j = a.match(/android/gi),
+                i = a.match(/iphone/gi),
+                l = h.devicePixelRatio;
+            if (i) {
+                if (l >= 3 && (!n || n >= 3)) {
+                    n = 3;
+                } else {
+                    if (l >= 2 && (!n || n >= 2)) {
+                        n = 2;
+                    } else {
+                        n = 1;
+                    }
+                }
+            } else {
+                n = 1;
+            }
+            d = 1 / n;
+        }
+        c.setAttribute("data-dpr", n);
+        if (k) {
+            var g = k.getAttribute("content").match(/initial\-scale=([\d\.]+)/);
+            if (g) {
+                d = parseFloat(g[1]);
+                n = parseInt(1 / d);
+            }
+        }
+        if (!k) {
+            k = m.createElement("meta");
+            k.setAttribute("name", "viewport");
+            k.setAttribute("content", "initial-scale=" + d + ", maximum-scale=" + d + ", minimum-scale=" + d + ", user-scalable=no");
+            if (c.firstElementChild) {
+                c.firstElementChild.appendChild(k);
+            } else {
+                var b = m.createElement("div");
+                b.appendChild(k);
+                m.write(b.innerHTML);
+            }
+        }
+        refreshRem = function() {
+            var p = c.clientWidth;
+            if (!p) {
+                return;
+            }
+            f.fontSize = 30 * (p / 750);
+            var z = f.fontSize;
+            z = z >= 60 ? 60 : z;
+            c.style.fontSize = z + "px";
+        };
+        h.addEventListener("resize", function() {
+            clearTimeout(e);
+            e = setTimeout(refreshRem, 300);
+        }, false);
+        h.addEventListener("pageshow", function(p) {
+            if (p.persisted) {
+                clearTimeout(e);
+                e = setTimeout(refreshRem, 300);
+            }
+        }, false);
+        refreshRem();
+    })();
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="section section-search clear">
+            <div class="box-content mr-b-space">
+                <div class="input-group">
+                    <label for="selectTime">出发日期</label>
+                    <input  type="text" id="selectTime" name="selectTime" class="input-item item-mdate" readonly>
+                </div>
+            </div>
+            <div class="box-content mr-b-space J-begin-station" data-code="1">
+                <div class="box-xs box-xs-l">出发地 |
+                </div>
+                <div class="box-xs box-xs-r">遵义
+                </div>
+            </div>
+            <div class="box-content J-end-station" data-code="3">
+                <div class="box-xs box-xs-l">目的地 |
+                </div>
+                <div class="box-xs box-xs-r">赤水大瀑布
+                </div>
+            </div>
+            <a href="./busList.html" class="btn btn-main btn-search">去搜索</a>
+        </div>
+        <div class="section section-group J-group">
+            <div class="txt-center">
+              <i class="i-loading"></i>
+            </div>
+        </div>
+    </div>
+    <div class="J-station-container"></div>
+    <script type="text/javascript" src="/prd/scripts/common/lib/index.js?1496767878865"></script>
+    <script type="text/javascript" src="/prd/scripts/mobile/busLine.js?1496767878865"></script>
+</body>
+
+</html>

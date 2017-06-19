@@ -1,0 +1,45 @@
+.footer{margin-top: 0;background: #fff;}
+.footer .service li .desc *{
+    font-size: .83333rem;
+}
+.footer .service{
+    padding: .4rem 0;
+    background-color: #fff;width: 23rem;
+    margin: 0 auto;
+    text-align: center;
+}
+.footer .service li{
+    background-color: #fff;
+    width: 7rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+.footer .service li .desc{
+    background-color: #fff;
+    color: #b2b2b2;
+    font-size: 0.83rem;
+    display: inline-block;
+    line-height: 1.2
+
+}
+.footer .icon {
+    width: 1.2rem;
+    height: 1rem;
+    margin-right: .2rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: -.6rem;
+}
+
+.footer .copyright{
+    height: 2rem;
+    line-height: 2rem;
+    vertical-align: middle;
+    background-color: #f2f2f2;
+    color: #b2b2b2;
+    text-align: center;
+    font-size: 0.76667rem;
+}
+.footer .copyright *{
+    font-size: 0.76667rem;
+}
