@@ -1,0 +1,43 @@
+@charset "utf-8";
+@import url("../common/layout.css");
+@import url("../activity.css");
+body,.container{
+    background:#ffffff;
+}
+img{
+    width:100%;
+    height:100%;
+}
+.opacity{
+    opacity:0.6;
+}
+body{
+    background-image: url("/images/activity/bg.jpg");
+    background-size: 100% 100%;
+}
+.section-top{
+    height:7rem;
+}
+.section-container{
+    height: 25rem;
+    position:relative;
+    z-index:10;
+}
+.section-footer{
+    height:8rem;
+    bottom: 0;
+    position: fixed;
+}
+.section-form-camp{
+    left:0;
+    top:0;
+    background:none;
+    position:absolute;
+}
+.submit-buttom{
+    width:16rem;
+    margin-top:1rem;
+}
+.input-group .input-item{
+    background:none;
+}

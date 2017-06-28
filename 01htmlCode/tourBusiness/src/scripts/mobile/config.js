@@ -32,6 +32,7 @@ window.onerror = function() {
 
 var urls = {
 	"GET_PLACE_LIST": Cfg.interFacePrefix + "public/getList", //获取列表
+	"SET_INSERT":Cfg.interFacePrefix + "public/setInsert"
 };
 
 
