@@ -6,6 +6,7 @@ require("plugins/hogan/hogan.js");
 require("plugins/datetime/index.js");
 var miniView = require("plugins/miniView/miniView.js");
 var warnDialog = require("plugins/dialog/warningDialog.js");
+var simpleValidator = require("plugins/validator/simpleValidator.js");
 var QueryString = require("util/parameterPaser.js");
 var urlParams = QueryString.parseQueryString(location.search);
 var dialog=null;
@@ -31,43 +32,7 @@ var Page = {
        })
     },
     formValid: function() {
-        var patternMaps = {
-            content:/^[a-zA-Z0-9\u4e00-\u9fa5]+$/,
-            int:/^[0-9]*$/,
-            nfloat:/^[0-9]+(\.)?([0-9]{1,2})?$/,
-            tel:/^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/
-        };
-        var inputs;
-        inputs = document.getElementById("userInfo").getElementsByTagName("input");
-        for (var i = 0; i < inputs.length; i++) {
-            var dom = inputs[i];
-            var type = dom.getAttribute("type");
-            var requireMsg = dom.getAttribute("require-msg");
-            var isRequire = dom.getAttribute("isRequire");
-           
-            if (!type || type == "" || type == "text") {
-            if (!dom.value && isRequire) {
-                showTip(requireMsg);
-                return false;
-            }
-            if (dom.value) {
-                var pattern = dom.getAttribute("pattern");
-                if(pattern){
-                    var regStr =/(.*)/;
-                    if(patternMaps.hasOwnProperty(pattern)){
-                       regStr=patternMaps[pattern];
-                    }
-                    if (!regStr.test(dom.value.toString())) {
-                        showTip(dom.getAttribute("error-msg"));
-                        return false;
-                    }
-                }
-            }
-            }
-            
-            
-        }
-        return true;
+       return simpleValidator.formValid('userInfo');
     },
     submit:function(){
       var params ={
