@@ -1,6 +1,9 @@
 # fekit-project
 a project for fekit
 
+# npm install fekit
+install fekit global installation is not recommended
+
 # fekit server -p 9100 
 start fekit server  set port 9100 , default port is 80
 
